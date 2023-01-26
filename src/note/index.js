@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from '../components/Button';
 import { Div } from '../components/div/styled';
+import { Div2 } from '../components/div2/styled';
 import Input from '../components/Input';
 import Textarea from '../components/TextArea';
 
@@ -25,7 +26,6 @@ function NoteApp() {
 
   return (
     <Div>
-      <Div>
       <h1>Note App</h1>
       <form onSubmit={handleSubmit}>
         <Input value={title} onChange={e => setTitle(e.target.value)} placeholder="Note Title" />
@@ -34,8 +34,8 @@ function NoteApp() {
         <br />
         <Button Text="Save Note" type="submit" />
       </form>
-      </Div>
       <br />
+      <Div2>
       <ul>
         {notes.map((note, index) => (
           <li key={index}>
@@ -45,6 +45,7 @@ function NoteApp() {
           </li>
         ))}
       </ul>
+      </Div2>
     </Div>
   );
 }
